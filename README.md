@@ -2,6 +2,8 @@
 
 OpenAI TTS WebApp is a FastAPI-based web application that converts text input to speech using the OpenAI API. The app features a simple and mobile-optimized interface with selectable natural language voice models that are provided by OpenAI.
 
+![Screenshot 2024-07-05 140540](https://github.com/OlsenSM91/OpenAI-TTS-WebApp/assets/130707762/eb4b38ea-b859-4ba8-8eb7-1e39b1233e4b)
+
 ## Features
 
 - Convert text to speech using OpenAI's text-to-speech models.
