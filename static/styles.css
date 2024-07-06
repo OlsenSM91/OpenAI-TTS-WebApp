@@ -2,10 +2,11 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    align-items: flex-start; /* Changed to flex-start to align content at the top */
+    min-height: 100vh; /* Changed from height to min-height */
     margin: 0;
     background-color: #f4f4f9;
+    overflow-x: hidden; /* Ensure no horizontal overflow */
 }
 
 .container {
@@ -14,6 +15,9 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0; /* Added margin to ensure some space at the top and bottom */
+    width: 90%; /* Adjust width for better mobile responsiveness */
+    max-width: 800px; /* Maximum width to control the layout */
 }
 
 .logo {
@@ -32,26 +36,56 @@ textarea {
 
 .controls {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 10px;
 }
 
-select {
+select, input[type="file"], input[type="checkbox"], input[type="number"], input[type="text"] {
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-.generate-btn {
+.generate-btn, .upload-btn {
     padding: 10px 20px;
     border: none;
     background-color: #007bff;
     color: white;
     border-radius: 5px;
     cursor: pointer;
+    position: relative;
 }
 
-.generate-btn:hover {
+.generate-btn:hover, .upload-btn:hover {
     background-color: #0056b3;
+}
+
+.loader {
+    border: 4px solid #f3f3f3; /* Light grey */
+    border-top: 4px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 2s linear infinite;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+progress {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none;
 }
